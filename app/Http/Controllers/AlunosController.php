@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AlunosController extends Controller
 {
-    public function getAlunos(Request $request)
+    public function listarAlunos(Request $request)
     {
         $alunos = [];
         foreach (Aluno::all() as $aluno){
