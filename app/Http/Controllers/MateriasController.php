@@ -27,9 +27,7 @@ class MateriasController extends Controller
             $materia->delete();
 
             return redirect(route('listarMateria'));
-            }
-
-
+        }
     }
 
     public function formularioMateria()
