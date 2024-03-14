@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MateriaRequest;
 use App\Models\Materia;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
@@ -35,8 +36,9 @@ class MateriasController extends Controller
         return view('formularioMateria');
     }
 
-    public function criarMateria(Request $request)
+    public function criarMateria(MateriaRequest $request)
     {
+
         Materia::create($request->all());
 
         return redirect(route('listarMaterias'));
@@ -51,7 +53,7 @@ class MateriasController extends Controller
 
     }
 
-    public function editarMateria(Request $request)
+    public function editarMateria(MateriaRequest $request)
     {
         if($this->existeId($request)){
             $materia = Materia::find($request['id']);
